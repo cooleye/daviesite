@@ -17,8 +17,8 @@
             "host": ["47.108.78.24"],
             "port": "22",
             "ref": "origin/master",
-            "repo": "git@github.com:cooleye/www.git",
-            "path": "/mnt/server/public",
+            "repo": "git@github.com:cooleye/daviesite.git",
+            "path": "/mnt/daviesite",
             "ssh_options": "StrictHostKeyChecking=no",
             "post-deploy" : "npm install && pm2 start 0"
         }
