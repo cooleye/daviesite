@@ -20,6 +20,9 @@
             "repo": "git@github.com:cooleye/daviesite.git",
             "path": "/mnt/daviesite",
             "ssh_options": "StrictHostKeyChecking=no",
+            "pre-setup": "echo 'This is a pre-setup command'",
+            "post-setup": "ls -la",
+            "pre-deploy-local": "echo 'This is a pre-deploy-local command'",
             "post-deploy" : "npm install && pm2 start 0"
         }
     }
