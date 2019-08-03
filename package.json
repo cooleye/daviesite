@@ -7,7 +7,7 @@
     "start": "pm2 start index.js",
     "sp": "pm2 deploy ecosystem.json production setup",
     "dp": "pm2 deploy ecosystem.json production",
-    "ud": "pm2 deploy ecosystem.json production update",
+    "ud": "pm2 deploy production update",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
