@@ -144,6 +144,13 @@ pm2 deploy production update
 ```
 更新代码
 
+实际在使用中，发现更新不成功，但是服务端执行这句是可以的，但是我并不想在服务端执行，我需要在本地就可以直接更新。
+办法是，修改ecosystem.json
+```
+"post-deploy" : "git pull origin master && npm install && pm2 start 0"
+```
+在执行  `pm2 deploy ecosystem.json production`的时候，会从github下载更新
+
 #### 6. 回滚
 ```
 pm2 deploy production revert 1
@@ -153,5 +160,37 @@ pm2 deploy production revert 1
 ```
 pm2 deploy production --force
 ```
+#### 8. 修改package.json
+修改package.json配置文件，添加命令：
+```
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start index.js",
+    "sp": "pm2 deploy ecosystem.json production setup",
+    "dp": "pm2 deploy ecosystem.json production",
+    "ud": "pm2 deploy production update",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.19.1"
+  }
+}
+```
 
-#### github：[https://github.com/cooleye/daviesite](https://github.com/cooleye/daviesite)
+这样，以后安装部署就执行
+```
+npm run sp
+```
+更新部署就执行：
+```
+npm run dp
+```
+
+#### 9 .github：[https://github.com/cooleye/daviesite](https://github.com/cooleye/daviesite)
