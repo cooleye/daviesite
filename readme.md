@@ -9,7 +9,7 @@
 ```
 npm install pm2@latest -g
 ```
-
+#### 官网文档：http://pm2.keymetrics.io/docs/usage/deployment/
 
 
 ## 2. 创建本地项目并关联到远程仓库
