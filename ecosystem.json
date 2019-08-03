@@ -22,8 +22,8 @@
             "ssh_options": "StrictHostKeyChecking=no",
             "pre-setup": "echo 'This is a pre-setup command'",
             "post-setup": "ls -la",
-            "pre-deploy-local": "git pull origin master",
-            "post-deploy" : "npm install && pm2 start 0"
+            "pre-deploy-local": "echo 'pre-deploy-local'",
+            "post-deploy" : "git pull origin master && npm install && pm2 start 0"
         }
     }
 }
