@@ -23,7 +23,7 @@
             "pre-setup": "echo 'This is a pre-setup command'",
             "post-setup": "ls -la",
             "pre-deploy-local": "echo 'This is a pre-deploy-local command'",
-            "post-deploy" : "npm install && pm2 start 0"
+            "post-deploy" : "git pull origin master && npm install && pm2 start 0"
         }
     }
 }
