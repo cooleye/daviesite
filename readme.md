@@ -1,7 +1,7 @@
 # PM2实现Nodejs项目自动部署
 
 
-    思路：本地git仓库与远程仓库关联（github、码云等平台），然后pm2按照指定配置登录服务器，拉取远程仓库的代码更新，再执行一些指定的命令（如打包等）。
+原理：本地git仓库与远程仓库关联（github、码云等平台），然后pm2按照指定配置登录服务器，拉取远程仓库的代码更新。
     
   
 ## 1. 环境搭建
@@ -144,4 +144,14 @@ pm2 deploy production update
 ```
 更新代码
 
+#### 6. 回滚
+```
+pm2 deploy production revert 1
+```
 
+#### 7. 强制提交 
+```
+pm2 deploy production --force
+```
+
+#### github：[https://github.com/cooleye/daviesite](https://github.com/cooleye/daviesite)
